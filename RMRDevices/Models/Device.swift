@@ -15,7 +15,7 @@ struct Device {
     let name: String
     let year: String
     let os: String
-    let user: User?
+    let username: String?
     let platform: String
     var isBusy: Bool = false
     let ref: DatabaseReference?
@@ -28,7 +28,7 @@ struct Device {
         self.os = os
         self.platform = platform
         self.ref = nil
-        self.user = nil
+        self.username = nil
         self.isBusy = false
     }
     
@@ -39,7 +39,7 @@ struct Device {
         year = snapshotValue["year"] as! String
         os = snapshotValue["os"] as! String
         platform = snapshotValue["platform"] as! String
-        user = snapshotValue["user"] as? User
+        username = snapshotValue["username"] as? String
         isBusy = snapshotValue["isBusy"] as! Bool
         ref = snapshot.ref
     }

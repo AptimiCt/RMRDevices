@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,23 +12,23 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="RMRDevices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UIScrollView">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="X0s-np-6j4">
-                                <rect key="frame" x="40" y="185.33333333333334" width="334" height="365.33333333333326"/>
+                                <rect key="frame" x="40" y="101.5" width="240" height="365.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="tua-NJ-0jM">
-                                        <rect key="frame" x="56.333333333333329" y="0.0" width="221.66666666666669" height="104.33333333333333"/>
+                                        <rect key="frame" x="9.5" y="0.0" width="221.5" height="104.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RMRDevices" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hvo-z9-2nA">
-                                                <rect key="frame" x="0.0" y="0.0" width="221.66666666666666" height="44.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="221.5" height="44.5"/>
                                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="40"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пользователь не найден" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pj0-Zn-Kcc">
-                                                <rect key="frame" x="6" y="84.333333333333343" width="209.33333333333334" height="20"/>
+                                                <rect key="frame" x="6" y="84.5" width="209.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="18"/>
                                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -36,15 +36,15 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qno-qI-hoW">
-                                        <rect key="frame" x="0.0" y="154.33333333333334" width="334" height="78"/>
+                                        <rect key="frame" x="0.0" y="154.5" width="240" height="78"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WCf-wV-o0U">
-                                                <rect key="frame" x="0.0" y="0.0" width="334" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="34"/>
                                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yO5-kK-hho">
-                                                <rect key="frame" x="0.0" y="44" width="334" height="34"/>
+                                                <rect key="frame" x="0.0" y="44" width="240" height="34"/>
                                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
@@ -57,10 +57,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kNw-rw-70S">
-                                        <rect key="frame" x="40" y="282.33333333333337" width="254" height="83"/>
+                                        <rect key="frame" x="40" y="282.5" width="160" height="83"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IbJ-fW-L5o">
-                                                <rect key="frame" x="0.0" y="0.0" width="254" height="32"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="32"/>
                                                 <color key="backgroundColor" white="1" alpha="0.20419784330985916" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="18"/>
                                                 <state key="normal" title="Login">
@@ -71,7 +71,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWp-K6-phy">
-                                                <rect key="frame" x="0.0" y="51.999999999999943" width="254" height="31"/>
+                                                <rect key="frame" x="0.0" y="52" width="160" height="31"/>
                                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="17"/>
                                                 <state key="normal" title="Register">
@@ -124,23 +124,23 @@
             <objects>
                 <viewController id="PKV-33-bF7" customClass="RegisterViewController" customModule="RMRDevices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bcZ-zV-YaH" customClass="UIScrollView">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="0GD-lm-iJG">
-                                <rect key="frame" x="40" y="140.66666666666666" width="334" height="401.33333333333337"/>
+                                <rect key="frame" x="40" y="56.5" width="240" height="401.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Raa-Wh-slC">
-                                        <rect key="frame" x="46.333333333333329" y="0.0" width="241.66666666666669" height="104.33333333333333"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="104.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Регистрация" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMu-6T-t9e">
-                                                <rect key="frame" x="0.0" y="0.0" width="241.66666666666666" height="44.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="44.5"/>
                                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="40"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Некорректные данные" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCH-yK-RtX">
-                                                <rect key="frame" x="24.333333333333343" y="84.333333333333343" width="193" height="20"/>
+                                                <rect key="frame" x="23.5" y="84.5" width="193" height="20"/>
                                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="18"/>
                                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -148,25 +148,25 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="l50-Dd-jkW">
-                                        <rect key="frame" x="0.0" y="154.33333333333334" width="334" height="166.00000000000003"/>
+                                        <rect key="frame" x="0.0" y="154.5" width="240" height="166"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6vH-Nk-4cm" userLabel="Name">
-                                                <rect key="frame" x="0.0" y="0.0" width="334" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="34"/>
                                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Фамилия" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z3w-T3-qOp" userLabel="LastName">
-                                                <rect key="frame" x="0.0" y="44" width="334" height="34"/>
+                                                <rect key="frame" x="0.0" y="44" width="240" height="34"/>
                                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yCc-eZ-l5z">
-                                                <rect key="frame" x="0.0" y="88" width="334" height="34"/>
+                                                <rect key="frame" x="0.0" y="88" width="240" height="34"/>
                                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mrr-AQ-0wS">
-                                                <rect key="frame" x="0.0" y="132" width="334" height="34"/>
+                                                <rect key="frame" x="0.0" y="132" width="240" height="34"/>
                                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
@@ -183,10 +183,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sWJ-8e-tG0">
-                                        <rect key="frame" x="40" y="370.33333333333337" width="254" height="31"/>
+                                        <rect key="frame" x="40" y="370.5" width="160" height="31"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLR-dC-sJ0">
-                                                <rect key="frame" x="0.0" y="0.0" width="254" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="31"/>
                                                 <color key="backgroundColor" white="1" alpha="0.20337257922535212" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="17"/>
                                                 <state key="normal" title="Register">
@@ -240,42 +240,83 @@
             <objects>
                 <viewController id="TWh-II-uGb" customClass="DeviceViewController" customModule="RMRDevices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="79Y-pe-ZfY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6ZQ-fV-B7f">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <color key="backgroundColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.74180777086350558" green="0.92153996229171753" blue="0.8449477156726759" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="4" reuseIdentifier="Cell" textLabel="KFT-jp-S7K" detailTextLabel="SFg-pW-ZoD" imageView="6Si-lM-Siz" rowHeight="108" style="IBUITableViewCellStyleSubtitle" id="Wdq-Ee-IS4" customClass="TableViewCell" customModule="RMRDevices" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="108"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="116" id="UvR-6o-9jm" customClass="TableViewCell" customModule="RMRDevices" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="116"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wdq-Ee-IS4" id="Dep-vL-NZf">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UvR-6o-9jm" id="ffv-Rc-Bi7">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="116"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KFT-jp-S7K">
-                                                    <rect key="frame" x="143" y="34" width="33.333333333333336" height="20.333333333333332"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="nse-fe-eBu">
+                                                    <rect key="frame" x="0.0" y="15" width="85" height="86"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="85" id="9al-tW-hdT"/>
+                                                        <constraint firstAttribute="height" constant="86" id="rp7-xa-wUU"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNn-Mv-Is4">
+                                                    <rect key="frame" x="93" y="11" width="61" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="wC1-0G-5Mg"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5N-MB-xqK">
+                                                    <rect key="frame" x="93" y="87" width="212" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SFg-pW-ZoD">
-                                                    <rect key="frame" x="143" y="57.333333333333336" width="43.666666666666664" height="14.333333333333334"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Занято пользователем:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZh-ze-nhU">
+                                                    <rect key="frame" x="93" y="58" width="212" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="logo" id="6Si-lM-Siz">
-                                                    <rect key="frame" x="20" y="0.0" width="108" height="108"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2P-hN-QIZ">
+                                                    <rect key="frame" x="205" y="10" width="100" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="fBQ-9Q-a1d"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="zZh-ze-nhU" firstAttribute="top" secondItem="GNn-Mv-Is4" secondAttribute="bottom" constant="23" id="0Dt-jU-5qg"/>
+                                                <constraint firstItem="zZh-ze-nhU" firstAttribute="trailing" secondItem="ffv-Rc-Bi7" secondAttribute="trailingMargin" id="18r-7K-04y"/>
+                                                <constraint firstItem="GNn-Mv-Is4" firstAttribute="top" secondItem="ffv-Rc-Bi7" secondAttribute="top" constant="11" id="4ff-46-PpH"/>
+                                                <constraint firstItem="nse-fe-eBu" firstAttribute="top" secondItem="ffv-Rc-Bi7" secondAttribute="topMargin" constant="4" id="8Xc-W6-ovs"/>
+                                                <constraint firstItem="f5N-MB-xqK" firstAttribute="top" secondItem="zZh-ze-nhU" secondAttribute="bottom" constant="8" id="HLc-Mv-jO2"/>
+                                                <constraint firstItem="u2P-hN-QIZ" firstAttribute="top" secondItem="ffv-Rc-Bi7" secondAttribute="top" constant="10" id="Vrx-nM-BSQ"/>
+                                                <constraint firstItem="f5N-MB-xqK" firstAttribute="leading" secondItem="zZh-ze-nhU" secondAttribute="leading" id="Wea-Vl-4Fr"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="u2P-hN-QIZ" secondAttribute="trailing" id="fwI-Oy-K6Y"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="nse-fe-eBu" secondAttribute="bottom" constant="4" id="ggT-8t-SGY"/>
+                                                <constraint firstItem="GNn-Mv-Is4" firstAttribute="leading" secondItem="nse-fe-eBu" secondAttribute="trailing" constant="8" id="hpd-Za-i2e"/>
+                                                <constraint firstItem="nse-fe-eBu" firstAttribute="leading" secondItem="ffv-Rc-Bi7" secondAttribute="leading" id="i3H-1A-ceO"/>
+                                                <constraint firstItem="u2P-hN-QIZ" firstAttribute="leading" secondItem="GNn-Mv-Is4" secondAttribute="trailing" constant="51" id="pRH-aB-PhU"/>
+                                                <constraint firstItem="zZh-ze-nhU" firstAttribute="leading" secondItem="ffv-Rc-Bi7" secondAttribute="leading" constant="93" id="pfX-pW-IDW"/>
+                                                <constraint firstItem="f5N-MB-xqK" firstAttribute="trailing" secondItem="zZh-ze-nhU" secondAttribute="trailing" id="vsa-jc-Oxm"/>
+                                            </constraints>
                                         </tableViewCellContentView>
-                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="imageViewCell" destination="nse-fe-eBu" id="Wn8-I6-cfi"/>
+                                            <outlet property="labelInfo" destination="zZh-ze-nhU" id="96s-R3-u64"/>
+                                            <outlet property="nameDevice" destination="GNn-Mv-Is4" id="MgK-v6-49F"/>
+                                            <outlet property="osDevice" destination="u2P-hN-QIZ" id="U61-xa-ZWX"/>
+                                            <outlet property="userName" destination="f5N-MB-xqK" id="Pjr-1q-VGH"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -315,36 +356,36 @@
             <objects>
                 <viewController id="hS7-dd-znh" customClass="AddViewController" customModule="RMRDevices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YWM-Y4-nMh" customClass="UIScrollView">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="ziB-BY-5V8">
-                                <rect key="frame" x="40" y="83" width="334" height="199"/>
+                                <rect key="frame" x="40" y="83" width="240" height="199"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя устройства" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rxc-3H-Yd5">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" textContentType="name"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Операционная система" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f4B-rD-0Fs">
-                                        <rect key="frame" x="0.0" y="55" width="334" height="34"/>
+                                        <rect key="frame" x="0.0" y="55" width="240" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Год устройства" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="svR-MU-sEm">
-                                        <rect key="frame" x="0.0" y="110" width="334" height="34"/>
+                                        <rect key="frame" x="0.0" y="110" width="240" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Платформа" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KX3-0Y-vqe">
-                                        <rect key="frame" x="0.0" y="165" width="334" height="34"/>
+                                        <rect key="frame" x="0.0" y="165" width="240" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ab-D8-hkZ">
-                                <rect key="frame" x="60" y="353" width="294" height="30"/>
+                                <rect key="frame" x="60" y="353" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="77" id="uYB-dV-Aj7"/>
                                 </constraints>
@@ -383,11 +424,11 @@
             <objects>
                 <viewController id="XL4-2t-Gmy" customClass="HistroryViewController" customModule="RMRDevices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B93-VD-Stk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ожидайте в следующих версиях" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yc-bs-xhq">
-                                <rect key="frame" x="76" y="306" width="262.33333333333331" height="75"/>
+                                <rect key="frame" x="29" y="222" width="262" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="eMY-y3-ToE"/>
                                 </constraints>
@@ -396,7 +437,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vE6-JC-mxr">
-                                <rect key="frame" x="131" y="92" width="152" height="99"/>
+                                <rect key="frame" x="110" y="92" width="100" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="tcZ-JX-e1Y"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -404,13 +448,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="vE6-JC-mxr" firstAttribute="leading" secondItem="LKL-5f-iDM" secondAttribute="leading" constant="131" id="ErZ-V9-fqC"/>
                             <constraint firstItem="2yc-bs-xhq" firstAttribute="centerY" secondItem="B93-VD-Stk" secondAttribute="centerY" constant="-24.5" id="IuS-TL-008"/>
                             <constraint firstItem="vE6-JC-mxr" firstAttribute="centerX" secondItem="LKL-5f-iDM" secondAttribute="centerX" id="J7m-Wd-Pcp"/>
-                            <constraint firstItem="vE6-JC-mxr" firstAttribute="top" secondItem="LKL-5f-iDM" secondAttribute="top" constant="92" id="LE6-Ge-ToG"/>
-                            <constraint firstItem="LKL-5f-iDM" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2yc-bs-xhq" secondAttribute="trailing" id="PT1-Vm-aKg"/>
+                            <constraint firstItem="vE6-JC-mxr" firstAttribute="top" secondItem="LKL-5f-iDM" secondAttribute="top" constant="92" id="UHu-HP-HyE"/>
                             <constraint firstItem="2yc-bs-xhq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="B93-VD-Stk" secondAttribute="leading" id="bqS-ds-wSZ"/>
-                            <constraint firstItem="LKL-5f-iDM" firstAttribute="bottom" secondItem="vE6-JC-mxr" secondAttribute="bottom" constant="496" id="d9X-XZ-hZw"/>
                             <constraint firstItem="2yc-bs-xhq" firstAttribute="centerX" secondItem="LKL-5f-iDM" secondAttribute="centerX" id="mSj-fm-TJ4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LKL-5f-iDM"/>
@@ -450,7 +491,7 @@
                     <tabBarItem key="tabBarItem" systemItem="search" id="avY-oB-VcA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PkW-c0-EDf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -464,7 +505,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="341.33334350585938" height="341.33334350585938"/>
+        <image name="logo" width="512" height="512"/>
         <image name="person.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>

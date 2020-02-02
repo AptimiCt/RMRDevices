@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class LoginViewController: UIViewController {
-
+    
     let segueIdentifier = "tabBarSegue"
     var isAdmin = false
     
@@ -20,54 +20,25 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        stateDidChangeListener()
         warnLabel.alpha = 0
-        let check = isAdminCheck()
-
         //Настройка отслеживания поднятия клавиатуры
         configureAddObserver()
         
     }
     
-//    MARK: - viewWillAppear, очистка данных для входа
+    //    MARK: - viewWillAppear, очистка данных для входа
     
     override func viewWillAppear(_ animated: Bool) {
         emailTextField.text = ""
         passwodrTextField.text = ""
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == segueIdentifier) {
-
-            let custMainVC = segue.destination as! UITabBarController
-            let res = custMainVC.viewControllers?[0] as! UINavigationController
-            let navController =  res.topViewController  as! DeviceViewController
-            navController.isAdmin = isAdmin
-        }
-    }
-    
-        func isAdminCheck() -> Bool {
-            guard let currentUser = Auth.auth().currentUser else {
-                return false
-            }
-            Database.database().reference(withPath: "users").child(currentUser.uid).observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
-    
-                if let dictionary = snapshot.value as? [String: AnyObject] {
-                    self?.isAdmin = dictionary["admin"] as! Bool
-                }
-                print("Compition admin: \(String(describing: self?.isAdmin))")
-            }, withCancel: nil)
-            return true
-        }
-
-    func stateDidChangeListener(_ check: Bool) {
+    func stateDidChangeListener() {
         
-        while !check {
-            
-            Auth.auth().addStateDidChangeListener { [weak self](auth, user) in
-                if user != nil {
-                    self?.performSegue(withIdentifier: (self?.segueIdentifier)!, sender: nil)
-                }
+        Auth.auth().addStateDidChangeListener { [weak self](auth, user) in
+            if user != nil {
+                self?.performSegue(withIdentifier: (self?.segueIdentifier)!, sender: nil)
             }
         }
     }

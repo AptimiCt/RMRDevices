@@ -34,7 +34,7 @@ class DeviceViewController: UIViewController {
         //поиск
         let search = UISearchController(searchResultsController: self)
         search.searchResultsUpdater = self
-        self.navigationItem.searchController = search
+        //self.navigationItem.searchController = search
     
         ref = Database.database().reference(withPath: "devices")
     }
@@ -52,25 +52,39 @@ class DeviceViewController: UIViewController {
         })
     }
     
-    //Свайпы по на ячейках
+    @IBAction func exitTapped(_ sender: UIBarButtonItem) {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print(error.localizedDescription)
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: - Свайпы на ячейках
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let toFree = UIContextualAction(style: .normal, title: "Осовбодить") { (action, view, success) in
+        let cell = tableView.cellForRow(at: indexPath) as! TableViewCell
+        
+        let toFree = UIContextualAction(style: .normal, title: "Осовбодить") { [weak self] (action, view, success) in
             tableView.cellForRow(at: indexPath)?.backgroundColor = .clear
-            print("Осовбождено: \(action)")
+            cell.labelInfo.isHidden = true
+            cell.userName.isHidden = true
+            self?.ref.child(cell.uid).child("isBusy").setValue(false)
+            self?.ref.child(cell.uid).child("username").setValue(nil)
+            tableView.reloadData()
         }
         toFree.image = UIImage(systemName: "arrowshape.turn.up.right")
-        toFree.backgroundColor = .clear
+        toFree.backgroundColor = #colorLiteral(red: 0, green: 0.785775125, blue: 0, alpha: 1)
+        
         return UISwipeActionsConfiguration(actions: [toFree])
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let pickUp = UIContextualAction(style: .normal, title: "Забрать") { [weak self] (action, view, success) in
             self?.allert(indexPath)
-            print("Занято")
-            
         }
         pickUp.image = UIImage(systemName: "arrowshape.turn.up.left")
-        pickUp.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+        pickUp.backgroundColor = #colorLiteral(red: 0.3098039329, green: 0.01568627544, blue: 0.1294117719, alpha: 1)
         return UISwipeActionsConfiguration(actions: [pickUp])
     }
     
@@ -82,7 +96,7 @@ class DeviceViewController: UIViewController {
                 let textField = alert.textFields?[0]
                 if let tf = textField {
                     if let text = tf.text {
-                        self.updateUser(text: text, indexPath )
+                        self.updateUser(text: text, indexPath)
                     }
                 }
             }
@@ -95,49 +109,55 @@ class DeviceViewController: UIViewController {
             
         self.present(alert, animated: true, completion: nil)
         }
+    
     func updateUser(text: String, _ indexPath: IndexPath) {
-        tableView.cellForRow(at: indexPath)?.backgroundColor = .red
+        let cell = tableView.cellForRow(at: indexPath) as! TableViewCell
+        self.ref.child(cell.uid).child("isBusy").setValue(true)
+        self.ref.child(cell.uid).child("username").setValue(text)
+        cell.labelInfo.isHidden = false
+        cell.userName.isHidden = false
+        tableView.cellForRow(at: indexPath)?.backgroundColor = #colorLiteral(red: 0.3098039329, green: 0.01568627544, blue: 0.1294117719, alpha: 1)
     }
     
-    func configureActions(for admin: Bool) {
-        print("admin of action: \(admin)")
-        if !admin {
-            addButton.isEnabled = false
-        }
+    func addUser(_ ref: DatabaseReference,_ text: String, _ indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! TableViewCell
+        ref.child(cell.uid).child("username").setValue(text)
     }
-    
-    @IBAction func exitTapped(_ sender: UIBarButtonItem) {
-        do {
-            try Auth.auth().signOut()
-        } catch {
-            print(error.localizedDescription)
-        }
-        dismiss(animated: true, completion: nil)
-    }
-    
 }
 
 extension DeviceViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return devices.count
-        
     }
     
-
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let deviceName = devices[indexPath.row].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TableViewCell
+        cell.nameDevice.text = devices[indexPath.row].name
+        let uidD = devices[indexPath.row].uid
+        cell.uid = uidD
+        let userName = devices[indexPath.row].username
         let deviceOs = devices[indexPath.row].os
-        var isBusy = devices[indexPath.row].isBusy
-        
+        let isBusy = devices[indexPath.row].isBusy
+        print("isBusy:\(isBusy)")
+        //print("userName:\(userName)")
         cell.backgroundColor = .clear
         if isBusy {
             cell.backgroundColor = .red
+            cell.userName.text = userName
+        } else {
+            cell.labelInfo.isHidden = true
+            cell.userName.isHidden = true
         }
-        cell.textLabel?.text = deviceName
-        cell.detailTextLabel?.text = deviceOs
-        cell.textLabel?.textColor = .white
+        if true {
+            cell.imageViewCell.image = UIImage(named: "logo")
+        }
+        cell.osDevice?.text = deviceOs
+        
+        cell.nameDevice.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        cell.osDevice.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        cell.labelInfo.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        cell.userName.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        
         return cell
     }
     
@@ -167,7 +187,6 @@ extension DeviceViewController: UISearchResultsUpdating {
         }
     }
     
-
     func filterContentForSearchText(_ searchText: String) {
         var filteredDevice =  devices.filter({ (device: Device) -> Bool in
             return device.name.lowercased().contains(searchText.lowercased())

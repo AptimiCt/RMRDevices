@@ -19,10 +19,10 @@ class HistroryViewController: UIViewController {
         super.viewDidLoad()
         adminLabel.isHidden = true
         ref = Database.database().reference(withPath: "users")
-        guard let currentUser = Auth.auth().currentUser else {
-            return
-        }
-        let userRef = self.ref.child(currentUser.uid)
+//        guard let currentUser = Auth.auth().currentUser else {
+//            return
+//        }
+        //let userRef = self.ref.child(currentUser.uid)
         
     }
 }
