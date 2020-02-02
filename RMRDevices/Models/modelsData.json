@@ -1,0 +1,47 @@
+[
+    {
+        "id": 0,
+        "name": "iPhone 11",
+        "year": "2019",
+        "os": "iOS 13",
+        "platform": "Apple",
+        "isBusy": false
+    },
+    {
+        "id": 1,
+        "name": "iPhone 10",
+        "year": "2019",
+        "os": "iOS 13",
+        "platform": "Apple",
+        "isBusy": false
+    },
+    {
+        "id": 2,
+        "name": "iPhone 11 Pro",
+        "year": "2019",
+        "os": "iOS 13",
+        "platform": "Apple",
+        "isBusy": false
+    },
+    {
+        "id": 3,
+        "name": "iPhone 8",
+        "year": "2019",
+        "os": "iOS 13",
+        "user": {
+            "name": "Alekss",
+            "lastName": "Vostdrikov",
+            "phoneNumber": "+79150665926"
+            },
+        "platform": "Apple",
+        "isBusy": true
+    },
+    {
+        "id": 4,
+        "name": "Xiaomi 4x",
+        "year": "2017",
+        "os": "android 9",
+        "platform": "Android",
+        "isBusy": false
+    }
+]
