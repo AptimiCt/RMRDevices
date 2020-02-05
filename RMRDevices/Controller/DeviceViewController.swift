@@ -32,9 +32,9 @@ class DeviceViewController: UIViewController {
         self.navigationController?.navigationItem.largeTitleDisplayMode = .always
         
         //поиск
-        let search = UISearchController(searchResultsController: self)
+        let search = UISearchController(searchResultsController: nil)
         search.searchResultsUpdater = self
-        //self.navigationItem.searchController = search
+        self.navigationItem.searchController = search
     
         ref = Database.database().reference(withPath: "devices")
     }
@@ -52,6 +52,15 @@ class DeviceViewController: UIViewController {
         })
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let row = self.tableView.indexPathForSelectedRow?.row else { return }
+        guard segue.identifier == "detailView" else {
+            return
+        }
+        guard let destination = segue.destination as? DetailViewController else { return }
+        destination.deviceDetail = self.devices[row]
+    }
+    
     @IBAction func exitTapped(_ sender: UIBarButtonItem) {
         do {
             try Auth.auth().signOut()
@@ -60,7 +69,6 @@ class DeviceViewController: UIViewController {
         }
         dismiss(animated: true, completion: nil)
     }
-    
     // MARK: - Свайпы на ячейках
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let cell = tableView.cellForRow(at: indexPath) as! TableViewCell
@@ -116,7 +124,7 @@ class DeviceViewController: UIViewController {
         self.ref.child(cell.uid).child("username").setValue(text)
         cell.labelInfo.isHidden = false
         cell.userName.isHidden = false
-        tableView.cellForRow(at: indexPath)?.backgroundColor = #colorLiteral(red: 0.3098039329, green: 0.01568627544, blue: 0.1294117719, alpha: 1)
+        tableView.cellForRow(at: indexPath)?.backgroundColor = #colorLiteral(red: 0.9890634418, green: 0.4376873672, blue: 0.5655598044, alpha: 1)
     }
     
     func addUser(_ ref: DatabaseReference,_ text: String, _ indexPath: IndexPath) {
@@ -124,25 +132,30 @@ class DeviceViewController: UIViewController {
         ref.child(cell.uid).child("username").setValue(text)
     }
 }
+// MARK: - extension UITableViewDelegate, UITableViewDataSource
 
 extension DeviceViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return devices.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TableViewCell
-        cell.nameDevice.text = devices[indexPath.row].name
+        cell.backgroundColor = .clear
+        
         let uidD = devices[indexPath.row].uid
-        cell.uid = uidD
+        
         let userName = devices[indexPath.row].username
         let deviceOs = devices[indexPath.row].os
         let isBusy = devices[indexPath.row].isBusy
-        print("isBusy:\(isBusy)")
-        //print("userName:\(userName)")
-        cell.backgroundColor = .clear
+        let nameDevice = devices[indexPath.row].name
+        cell.uid = uidD
+        cell.nameDevice.text = nameDevice
+        cell.osDevice?.text = deviceOs
         if isBusy {
-            cell.backgroundColor = .red
+            cell.backgroundColor = #colorLiteral(red: 0.9890634418, green: 0.4376873672, blue: 0.5655598044, alpha: 1)
             cell.userName.text = userName
         } else {
             cell.labelInfo.isHidden = true
@@ -151,18 +164,23 @@ extension DeviceViewController: UITableViewDelegate, UITableViewDataSource {
         if true {
             cell.imageViewCell.image = UIImage(named: "logo")
         }
-        cell.osDevice?.text = deviceOs
         
-        cell.nameDevice.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        cell.osDevice.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        cell.labelInfo.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        cell.userName.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        
+        configureCell(cell)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        //performSegue(withIdentifier: "detailView", sender: self)
+    }
+    
+    func configureCell(_ cell: TableViewCell) {
+        cell.nameDevice.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        cell.osDevice.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        cell.labelInfo.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        cell.userName.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        cell.imageViewCell.layer.cornerRadius = cell.imageViewCell.bounds.width / 3
+        cell.imageViewCell.clipsToBounds = true
     }
     
     func filterContent(for searchText: String) {
@@ -178,17 +196,21 @@ extension DeviceViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+// MARK: - extension UISearchResultsUpdating
 extension DeviceViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text {
             filterContent(for: searchText)
+            
             self.tableView.reloadData()
         }
     }
     
     func filterContentForSearchText(_ searchText: String) {
+        
         var filteredDevice =  devices.filter({ (device: Device) -> Bool in
+            
             return device.name.lowercased().contains(searchText.lowercased())
         })
     }

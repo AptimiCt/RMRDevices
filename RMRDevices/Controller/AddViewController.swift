@@ -29,6 +29,7 @@ class AddViewController: UIViewController {
         ref = Database.database().reference(withPath: "devices")
         configureAddObserver()
     }
+    
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         guard let name = nameTextField.text, let os = osTextField.text, let year = yearTextField.text, let platform = platformTextField.text
         else {
@@ -36,9 +37,12 @@ class AddViewController: UIViewController {
         }
         guard let key = ref.childByAutoId().key else { return }
         //print(key)
-        let device = Device(uid: key, name: name, year: year, os: os, platform: platform)
-        let devRef = self.ref.child(device.uid)
-        devRef.setValue(device.convertToDict())
-        self.navigationController?.popViewController(animated: true)
+        if !name.isEmpty, !os.isEmpty, !year.isEmpty, !platform.isEmpty {
+            let device = Device(uid: key, name: name, year: year, os: os, platform: platform)
+            let devRef = self.ref.child(device.uid)
+            devRef.setValue(device.convertToDict())
+        }
+        dismiss(animated: true, completion: nil)
+//        self.navigationController?.popViewController(animated: true)
     }
 }
